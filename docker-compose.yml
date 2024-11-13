@@ -1,0 +1,16 @@
+# very simple postgres instance for quick testing and development
+# to start the container run `docker-compose up -d`
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports: 
+      - "5432:5432"
+    volumes:
+     - /var/lib/postgresql/data
